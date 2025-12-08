@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero-section">
+    <h1 class="gradient-text">Currently Showing</h1>
+    <div class="hero-wrapper">
+        <!-- Left Scroll Button -->
+        <button class="scroll-btn left" onclick="scrollContainer('hero', 'left')">&lt;</button>
+
+        <!-- Scroll Container with unique ID -->
+        <div id="hero" class="hero-scroll-container">
+            {% for movie in current_movies %}
+            <a href="{% url 'movie_detail' movie.id %}" class="hero-link">
+                <div class="hero-item">
+                    <img src="{{ movie.image.url }}" alt="{{ movie.title }}">
+                    <div class="hero-preview">{{ movie.preview_text }}</div>
+                    <h3>{{ movie.title }}</h3>
+                </div>
+            </a>    
+            {% endfor %}
+        </div>
+
+        <!-- Right Scroll Button -->
+        <button class="scroll-btn right" onclick="scrollContainer('hero', 'right')">&gt;</button>
+    </div>
+</section>
+
+
+   <section class="content-section">
+        <h2 class="gradient-text">Live Shows</h2>
+
+        <div class="hero-wrapper">
+        <!-- Left Scroll Button -->
+            <button class="scroll-btn left" onclick="scrollContainer('live-shows', 'left')">&lt;
+
+            </button>
+
+        <!-- Scroll Container with unique ID -->
+            <div id="live-shows" class="hero-scroll-container">
+                {% for show in live_shows %}
+                <div class="hero-item">
+                    <img src="{{ show.image.url }}" alt="{{ show.title }}">
+                    <div class="hero-preview">{{ show.preview_text }}</div>
+                    <h3>{{ show.title }}</h3>
+                </div>
+                {% endfor %}
+            </div>
+
+        <!-- Right Scroll Button -->
+            <button class="scroll-btn right" onclick="scrollContainer('live-shows', 'right')">&gt;
+                
+            </button>
+        </div>
+    </section>
+
+
+
+   <section class="content-section">
+    <h2 class="gradient-text">Other Events</h2>
+
+    <div class="hero-wrapper">
+        <!-- Left Scroll Button -->
+        <button class="scroll-btn left" onclick="scrollContainer('other-events', 'left')">&lt;</button>
+
+        <!-- Scroll Container -->
+        <div id="other-events" class="hero-scroll-container">
+            {% for event in events %}
+            <div class="hero-item">
+                <img src="{{ event.image.url }}" alt="{{ event.title }}">
+                <div class="hero-preview">{{ event.preview_text }}</div>
+                <h3>{{ event.title }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Right Scroll Button -->
+        <button class="scroll-btn right" onclick="scrollContainer('other-events', 'right')">&gt;</button>
+    </div>
+</section>
+
+
+{% endblock %}

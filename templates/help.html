@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="help-center-page" style="padding: 50px; max-width: 900px; margin: auto;">
+    <h1 style="text-align: center; margin-bottom: 30px;">Help Center</h1>
+
+    <p>Welcome to the Ticko Help Center. We're here to assist you with any questions or issues you may have while browsing, booking, or managing tickets for live events.</p>
+
+    <h2>1. Getting Started</h2>
+    <p>To start using Ticko:</p>
+    <ul>
+        <li>Create an account by clicking <a href="{% url 'home' %}">here</a> and filling in your details.</li>
+        <li>Browse events by category—Concerts, Movies, Live Shows, Sports—and select the event you want to attend.</li>
+        <li>Add tickets to your cart and proceed to secure checkout.</li>
+    </ul>
+
+    <h2>2. Managing Your Tickets</h2>
+    <ul>
+        <li>Access your booked tickets from your <strong>My Tickets</strong> page.</li>
+        <li>Download or print your tickets for entry to events.</li>
+        <li>If an event is canceled or rescheduled, you’ll receive notifications via email.</li>
+    </ul>
+
+    <h2>3. Payment and Refunds</h2>
+    <ul>
+        <li>All payments are processed securely through our platform.</li>
+        <li>Refunds and cancellations are handled according to the event’s specific policies. Please review the event terms when booking.</li>
+        <li>If you experience any payment issues, contact our support team immediately.</li>
+    </ul>
+
+    <h2>4. Account Issues</h2>
+    <ul>
+        <li>Forgot your password? Use the <strong>Reset Password</strong> option on the login page.</li>
+        <li>Need to update your personal information? Visit <strong>Account Settings</strong> after logging in.</li>
+        <li>For account security concerns, contact our support team immediately.</li>
+    </ul>
+
+    <h2>5. Contact Support</h2>
+    <p>If you can’t find what you’re looking for, our support team is here to help:</p>
+    <ul>
+        <li>Email: <a href="mailto:ticko@gmail.com.com">support@ticko.com</a></li>
+        <li>Phone: +254 721 718874</li>
+    </ul>
+
+    <p style="text-align: center; margin-top: 40px;"><strong>We’re committed to making your live event experience smooth and enjoyable. Thank you for choosing Ticko!</strong></p>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Results for "{{ query }}"</h2>
+
+{% if movies %}
+    <h3>Movies</h3>
+    {% for item in movies %}
+        <p>{{ item.title }}</p>
+    {% endfor %}
+{% endif %}
+
+{% if events %}
+    <h3>Events</h3>
+    {% for item in events %}
+        <p>{{ item.title }}</p>
+    {% endfor %}
+{% endif %}
+
+{% if liveshows %}
+    <h3>Live Shows</h3>
+    {% for item in liveshows %}
+        <p>{{ item.title }}</p>
+    {% endfor %}
+{% endif %}
+
+{% if shows %}
+    <h3>Shows</h3>
+    {% for item in shows %}
+        <p>{{ item.title }}</p>
+    {% endfor %}
+{% endif %}
+
+{% if not movies and not events and not liveshows and not shows %}
+    <p>No results found for "{{ query }}".</p>
+{% endif %}
+
+{% endblock %}
